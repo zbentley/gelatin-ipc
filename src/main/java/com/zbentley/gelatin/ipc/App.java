@@ -1,4 +1,4 @@
-package com.zbentley.gelatin_ipc;
+package com.zbentley.gelatin.ipc;
 
 /**
  * Hello world!

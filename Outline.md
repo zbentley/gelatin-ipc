@@ -1,0 +1,62 @@
+- IPC Input
+    - Backends
+        - Thrift
+        - STDIN
+        - Dummy
+        - DBus
+- Persistence
+    - Transactionality semantics
+        - At-least-once (poll, process, pop)
+        - At-most-once (pop, process)
+    - Config
+        - Bounds (NG)
+            - total size, # of messages, etc.
+            - Behavior on boundary condition
+                - Notification behavior
+                    - Send "full" replies for new messages?
+                    - Broadcast "full" events?
+                - Action:
+                    - Drop new (tail) messages
+                    - Drop old (head) messages
+                    - Crash
+                    - Block incoming new messages??
+        - Batching
+            - Time and/or message count: if both, whichever comes first
+        - Recovery behavior: start accepting new msgs first, or fully recover first?
+    - Interface
+        - Event: onEmpty
+        - Event: onNewMessage (persist)
+        - Event: onStart (do recovery behavior)
+    - Backends
+        - SQLite
+        - Various disk queues
+        - Memory (java thread-safe queue)
+- Replies
+    - None (broadcast)
+    - Reply on receipt/parse (no persistence, not that useful)
+    - Persistence only
+    - Processing only
+        - What happens if sender goes away (reboot, etc) after persistence but before processing.
+    - Hybrid (with timeout) replies:
+        - PERSISTED (processing did not start before timeout)
+        - STARTED (processing started but did not finish before timeout)
+        - FINISHED (processing finished before timeout)
+- Processors (persistence and runners)
+    - Config
+        - Per-batch timeout
+        - Error behavior
+    - Interface
+        - Must be thread-safe/parallelizable
+        - Input
+            - Message array
+        - Output
+            - Status (success, fail, timeout, etc.)
+    - Later on
+        - Processor chaining
+            - Input
+                - Message array
+                - Previous processors' results? (Must be some datastructure that can deal with previous parallel sets and single processors)
+                - Previous processors' statuses?
+            - Output
+                - Status (success, fail, timeout, etc.)
+                - Transformation results?

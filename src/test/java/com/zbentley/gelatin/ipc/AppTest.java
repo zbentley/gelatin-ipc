@@ -1,4 +1,4 @@
-package com.zbentley.gelatin_ipc;
+package com.zbentley.gelatin.ipc;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

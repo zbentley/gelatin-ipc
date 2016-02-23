@@ -1,0 +1,17 @@
+- Perl DBus
+    - https://metacpan.org/release/Net-DBus
+- Java DBus
+    - Basic intro: http://rm5248.com/d-bus-tutorial/
+    - Alternative binding: https://github.com/cathive/fx-dbus
+    - Dependencies for java-dbus: https://github.com/diega/libmatthew-java
+    - Packaging libmatthew in maven: http://quest.windwards.net/content/maven-packaging-libmatthew-java
+    - Make instructions for dbus-java: https://cgit.freedesktop.org/dbus/dbus-java/tree/INSTALL
+    - Download link for dbus-java: http://dbus.freedesktop.org/releases/dbus-java/dbus-java-2.7.tar.gz
+- Persistent queues
+    - https://code.google.com/archive/p/ashes-queue/
+    - http://www.gaborcselle.com/open_source/java/persistent_queue_javadoc.html
+    - https://github.com/magro/persistent-queue
+    - https://github.com/bulldog2011/bigqueue
+    - Sqlite
+    - H2 database http://www.h2database.com/html/features.html
+    - Perl buffering system (maybe useless): https://metacpan.org/pod/Buffer::Transactional
