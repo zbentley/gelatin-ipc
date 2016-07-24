@@ -1,9 +1,11 @@
-- IPC Input
-    - Backends
-        - Thrift
-        - STDIN
-        - Dummy
-        - DBus
+- Transport Backends:
+    - FIFO (persist local, rpc remote)
+    - unix socket (thrift)
+    - socket (thrift)
+    - file (persist local, rpc remote)
+    - kernel msg queue
+    - Stream (STDIN)
+    - Dummy (data structure)
 - Persistence
     - Transactionality semantics
         - At-least-once (poll, process, pop)

@@ -1,6 +1,7 @@
 - Perl DBus
     - https://metacpan.org/release/Net-DBus
 - Java DBus
+    - Fork of the main dbus java client: https://github.com/cathive/dbus-java
     - Basic intro: http://rm5248.com/d-bus-tutorial/
     - Alternative binding: https://github.com/cathive/fx-dbus
     - Dependencies for java-dbus: https://github.com/diega/libmatthew-java
@@ -15,3 +16,6 @@
     - Sqlite
     - H2 database http://www.h2database.com/html/features.html
     - Perl buffering system (maybe useless): https://metacpan.org/pod/Buffer::Transactional
+    - https://pypi.python.org/pypi/queuelib
+    - https://metacpan.org/pod/IPC%3a%3aDirQueue
+    - QueueFile from http://square.github.io/tape/
